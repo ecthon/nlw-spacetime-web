@@ -1,4 +1,3 @@
-import { EmptyMemories } from '@/components/EmptyMemories'
 import { api } from '@/lib/api'
 import { cookies } from 'next/headers'
 import dayjs from 'dayjs'
@@ -6,6 +5,7 @@ import ptBR from 'dayjs/locale/pt-br'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
+import { EmpetyMemories } from '@/components/EmptyMemories'
 
 dayjs.locale(ptBR)
 
@@ -20,7 +20,7 @@ export default async function Home() {
   const isAuthenticated = cookies().has('token')
 
   if (!isAuthenticated) {
-    return <EmptyMemories />
+    return <EmpetyMemories />
   }
 
   const token = cookies().get('token')?.value
