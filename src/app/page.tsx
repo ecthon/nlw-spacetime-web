@@ -34,7 +34,7 @@ export default async function Home() {
   const memories: Memory[] = response.data
 
   if (memories.length === 0) {
-    return <EmptyMemories />
+    return <EmpetyMemories />
   }
 
   return (
